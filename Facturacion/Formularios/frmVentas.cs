@@ -74,7 +74,8 @@ namespace Facturacion.Formularios
                 MessageBox.Show("Ha ocurrido un error", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
-           }
+           }  
+
         }
 
         //  editar venta -- junto a los calculos
@@ -217,13 +218,36 @@ namespace Facturacion.Formularios
         }
 
 
-
-
-
-
             private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+
+
+            string sqlFactura = @" 
+                    SELECT       dbo.tblVentas.idVentas, 
+                    dbo.tblVentas.fecha, 
+                    dbo.tblClientes.primerNombre, 
+                    dbo.catEmpleados.primerNombre
+                    AS[primerNombre],
+                    dbo.catArticulos.nombreArticulo,
+                    dbo.tblVentas.cantidad, 
+                    dbo.tblVentas.precio, 
+                    dbo.tblVentas.iva, 
+                     dbo.tblVentas.descuento, dbo.tblVentas.total
+                    FROM dbo.tblVentas INNER JOIN
+                    dbo.tblClientes ON
+                    dbo.tblVentas.idCliente = dbo.tblClientes.idCliente
+                    INNER JOIN
+                     dbo.catEmpleados ON dbo.tblVentas.idEmpleado
+                     = dbo.catEmpleados.idEmpleado INNER JOIN
+                      dbo.catArticulos ON
+                      dbo.tblVentas.idArticulo = dbo.catArticulos.idArticulo
+                      AND dbo.tblVentas.idVentas = 2";
+
+            frmFacturacion fr = new frmFacturacion(sqlFactura);
+            fr.ShowDialog();
         }
+
+
     }
 }

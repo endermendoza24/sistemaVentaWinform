@@ -10,7 +10,8 @@ namespace Facturacion.Datos
 {
     public class clsConexionSQL
     {
-        private SqlConnection conexion = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
+        public  SqlConnection conexion = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
 
         public SqlConnection AbrirConexion()
         {
@@ -32,6 +33,33 @@ namespace Facturacion.Datos
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(connectionstring);
+        }
+
+        //  factura 
+        public static DataSet QueryConsultaDataSet(string Q)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
+            DataSet ds = new DataSet();
+
+            SqlCommand cmd = new SqlCommand(Q, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            try
+            {
+                con.Open();
+                da.Fill(ds);
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ds;
         }
     }
 }

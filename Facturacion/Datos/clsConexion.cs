@@ -13,7 +13,7 @@ namespace Facturacion.Datos
    public class clsConexion
     {
         //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
-        SqlConnection con = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
+        public SqlConnection con = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");
 
         public DataTable validacion(clsValidacionUsuario obje)
         {

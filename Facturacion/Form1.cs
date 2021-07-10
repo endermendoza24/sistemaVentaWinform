@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Facturacion.Formularios;
 
 namespace Facturacion
 {
@@ -69,6 +70,13 @@ namespace Facturacion
         private void cerrarSesiònToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmFacturacion fact = new frmFacturacion();
+            //fact.MdiParent = this;
+            //fact.Show();
         }
     }
 }
