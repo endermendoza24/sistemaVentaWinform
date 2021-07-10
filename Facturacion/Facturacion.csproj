@@ -93,6 +93,14 @@
     <Compile Include="Datos\clsCRUD_Marca.cs" />
     <Compile Include="Datos\clsCRUD_Proveedores.cs" />
     <Compile Include="Datos\clsCRUD_Ventas.cs" />
+    <Compile Include="Ds.cs">
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dtsetArticulos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,25 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsetVentas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\dtsetFactura.cs">
-      <DependentUpon>dtsetFactura.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\dtsetFactura.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dtsetFactura.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmFacturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmFacturacion.Designer.cs">
-      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmVentas.cs">
       <SubType>Form</SubType>
@@ -164,6 +158,12 @@
     <Compile Include="frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporte2.Designer.cs">
+      <DependentUpon>frmReporte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\clsLogica.cs" />
     <Compile Include="Logica\clsUsuarios.cs" />
     <Compile Include="Logica\clsValidacionUsuario.cs" />
@@ -177,11 +177,8 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmFacturacion.resx">
-      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
@@ -201,6 +198,9 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporte2.resx">
+      <DependentUpon>frmReporte2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -210,7 +210,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="rptFactura.rdlc" />
+    <EmbeddedResource Include="rptFact.rdlc" />
     <EmbeddedResource Include="Seguridad\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +258,17 @@
     <None Include="AlmacenTecnoDataSet3.xss">
       <DependentUpon>AlmacenTecnoDataSet3.xsd</DependentUpon>
     </None>
+    <None Include="Ds.xsc">
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </None>
+    <None Include="Ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Ds.xss">
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </None>
     <None Include="dtsetArticulos.xsc">
       <DependentUpon>dtsetArticulos.xsd</DependentUpon>
     </None>
@@ -290,17 +301,6 @@
     </None>
     <None Include="dtsetVentas.xss">
       <DependentUpon>dtsetVentas.xsd</DependentUpon>
-    </None>
-    <None Include="Formularios\dtsetFactura.xsc">
-      <DependentUpon>dtsetFactura.xsd</DependentUpon>
-    </None>
-    <None Include="Formularios\dtsetFactura.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dtsetFactura.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Formularios\dtsetFactura.xss">
-      <DependentUpon>dtsetFactura.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

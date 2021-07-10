@@ -1,6 +1,6 @@
 ﻿namespace Facturacion
 {
-    partial class Form1
+    partial class frmInicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.

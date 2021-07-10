@@ -18,7 +18,7 @@ namespace Facturacion.Seguridad
         //  Instancias de las clases
         clsValidacionUsuario vali = new clsValidacionUsuario();
         clsConexion cone = new clsConexion();
-        Form1 fr = new Form1();
+        frmInicio fr = new frmInicio();
 
         public void logueo()
         {
@@ -36,7 +36,7 @@ namespace Facturacion.Seguridad
                 login.ShowDialog();
                 if(login.DialogResult == DialogResult.OK)
                 {
-                    Application.Run(new Form1());
+                    Application.Run(new frmInicio());
                 }
                 txtPass.Clear();
                 txtUser.Clear();

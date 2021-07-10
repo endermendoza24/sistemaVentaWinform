@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Facturacion.Formularios;
+
 
 namespace Facturacion
 {
-    public partial class Form1 : Form
+    public partial class frmInicio : Form
     {
-        public Form1()
+        public frmInicio()
         {
             InitializeComponent();
         }
@@ -74,9 +74,9 @@ namespace Facturacion
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmFacturacion fact = new frmFacturacion();
-            //fact.MdiParent = this;
-            //fact.Show();
+            //frmReporteGeneral rep = new frmReporteGeneral();
+            //rep.MdiParent = this;
+            //rep.Show();
         }
     }
 }

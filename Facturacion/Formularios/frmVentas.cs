@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Facturacion.Datos;
@@ -21,7 +20,7 @@ namespace Facturacion.Formularios
 
         //  instancia a otras clases
         private string idVentas = null;
-        int posicion, id;
+        public int posicion, id;
         clsCRUD_Ventas vent = new clsCRUD_Ventas();
         public frmVentas()
         {
@@ -221,31 +220,10 @@ namespace Facturacion.Formularios
             private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            frmReporte2 rep = new frmReporte2();
+            
+            rep.Show();
 
-
-            string sqlFactura = @" 
-                    SELECT       dbo.tblVentas.idVentas, 
-                    dbo.tblVentas.fecha, 
-                    dbo.tblClientes.primerNombre, 
-                    dbo.catEmpleados.primerNombre
-                    AS[primerNombre],
-                    dbo.catArticulos.nombreArticulo,
-                    dbo.tblVentas.cantidad, 
-                    dbo.tblVentas.precio, 
-                    dbo.tblVentas.iva, 
-                     dbo.tblVentas.descuento, dbo.tblVentas.total
-                    FROM dbo.tblVentas INNER JOIN
-                    dbo.tblClientes ON
-                    dbo.tblVentas.idCliente = dbo.tblClientes.idCliente
-                    INNER JOIN
-                     dbo.catEmpleados ON dbo.tblVentas.idEmpleado
-                     = dbo.catEmpleados.idEmpleado INNER JOIN
-                      dbo.catArticulos ON
-                      dbo.tblVentas.idArticulo = dbo.catArticulos.idArticulo
-                      AND dbo.tblVentas.idVentas = 2";
-
-            frmFacturacion fr = new frmFacturacion(sqlFactura);
-            fr.ShowDialog();
         }
 
 
