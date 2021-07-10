@@ -1,0 +1,17 @@
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.Form1.resources
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.frmEmpleados.resources
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.frmMarcas.resources
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.Properties.Resources.resources
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.Seguridad.frmLogin.resources
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.csproj.GenerateResource.Cache
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\bin\Debug\Facturacion.exe.config
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\bin\Debug\Facturacion.exe
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\bin\Debug\Facturacion.pdb
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.exe
+C:\Users\HP\documents\visual studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.pdb
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.frmClientes.resources
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.frmProveedores.resources
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.frmArticulos.resources
+C:\Users\HP\Documents\Visual Studio 2015\Projects\Facturacion\Facturacion\obj\Debug\Facturacion.Formularios.frmVentas.resources
