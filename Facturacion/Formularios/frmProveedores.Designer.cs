@@ -43,9 +43,9 @@ namespace Facturacion
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dtgProveedores = new System.Windows.Forms.DataGridView();
-            this.almacenTecnoDataSet = new Facturacion.AlmacenTecnoDataSet();
+            this.almacenTecnoDataSet = new Facturacion.Datos.AlmacenTecnoDataSet();
             this.catProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catProveedoresTableAdapter = new Facturacion.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
+            this.catProveedoresTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
             this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,9 +274,9 @@ namespace Facturacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgProveedores;
-        private AlmacenTecnoDataSet almacenTecnoDataSet;
+        private Datos.AlmacenTecnoDataSet almacenTecnoDataSet;
         private System.Windows.Forms.BindingSource catProveedoresBindingSource;
-        private AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter catProveedoresTableAdapter;
+        private Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter catProveedoresTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;

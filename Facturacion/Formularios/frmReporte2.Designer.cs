@@ -32,9 +32,9 @@ namespace Facturacion
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.rptFacturar = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Ds = new Facturacion.Ds();
+            this.Ds = new Facturacion.Datos.Ds();
             this.tblFacBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblFacTableAdapter = new Facturacion.DsTableAdapters.tblFacTableAdapter();
+            this.tblFacTableAdapter = new Facturacion.Datos.DsTableAdapters.tblFacTableAdapter();
             this.txtFact = new System.Windows.Forms.TextBox();
             this.btnFact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Ds)).BeginInit();
@@ -112,8 +112,8 @@ namespace Facturacion
 
         private Microsoft.Reporting.WinForms.ReportViewer rptFacturar;
         private System.Windows.Forms.BindingSource tblFacBindingSource;
-        private Ds Ds;
-        private DsTableAdapters.tblFacTableAdapter tblFacTableAdapter;
+        private Datos.Ds Ds;
+        private Datos.DsTableAdapters.tblFacTableAdapter tblFacTableAdapter;
         private System.Windows.Forms.TextBox txtFact;
         private System.Windows.Forms.Button btnFact;
     }

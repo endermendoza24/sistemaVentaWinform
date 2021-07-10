@@ -65,22 +65,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlmacenTecnoDataSet.Designer.cs">
+    <Compile Include="Datos\AlmacenTecnoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTecnoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AlmacenTecnoDataSet1.Designer.cs">
+    <Compile Include="Datos\AlmacenTecnoDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTecnoDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AlmacenTecnoDataSet2.Designer.cs">
+    <Compile Include="Datos\AlmacenTecnoDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTecnoDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AlmacenTecnoDataSet3.Designer.cs">
+    <Compile Include="Datos\AlmacenTecnoDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTecnoDataSet3.xsd</DependentUpon>
@@ -93,33 +93,33 @@
     <Compile Include="Datos\clsCRUD_Marca.cs" />
     <Compile Include="Datos\clsCRUD_Proveedores.cs" />
     <Compile Include="Datos\clsCRUD_Ventas.cs" />
-    <Compile Include="Ds.cs">
+    <Compile Include="Datos\Ds.cs">
       <DependentUpon>Ds.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Ds.Designer.cs">
+    <Compile Include="Datos\Ds.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dtsetArticulos.Designer.cs">
+    <Compile Include="Datos\dtsetArticulos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsetArticulos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dtsetEmpleado.Designer.cs">
+    <Compile Include="Datos\dtsetEmpleado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsetEmpleado.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dtsetVentas.Designer.cs">
+    <Compile Include="Datos\dtsetVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsetVentas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmInicio.cs">
+    <Compile Include="Formularios\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicio.Designer.cs">
+    <Compile Include="Formularios\frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmVentas.cs">
@@ -128,40 +128,40 @@
     <Compile Include="Formularios\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmArticulos.cs">
+    <Compile Include="Formularios\frmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmArticulos.Designer.cs">
+    <Compile Include="Formularios\frmArticulos.Designer.cs">
       <DependentUpon>frmArticulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.cs">
+    <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.cs">
+    <Compile Include="Formularios\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmpleado.cs">
+    <Compile Include="Formularios\frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmpleado.Designer.cs">
+    <Compile Include="Formularios\frmEmpleado.Designer.cs">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMarcas.cs">
+    <Compile Include="Formularios\frmMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMarcas.Designer.cs">
+    <Compile Include="Formularios\frmMarcas.Designer.cs">
       <DependentUpon>frmMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProveedores.cs">
+    <Compile Include="Formularios\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProveedores.Designer.cs">
+    <Compile Include="Formularios\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporte2.cs">
+    <Compile Include="Formularios\frmReporte2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporte2.Designer.cs">
+    <Compile Include="Formularios\frmReporte2.Designer.cs">
       <DependentUpon>frmReporte2.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\clsLogica.cs" />
@@ -170,35 +170,35 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\clsLogin.cs" />
-    <Compile Include="Seguridad\frmLogin.cs">
+    <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Seguridad\frmLogin.Designer.cs">
+    <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="frmInicio.resx">
+    <EmbeddedResource Include="Formularios\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmArticulos.resx">
+    <EmbeddedResource Include="Formularios\frmArticulos.resx">
       <DependentUpon>frmArticulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
+    <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpleado.resx">
+    <EmbeddedResource Include="Formularios\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMarcas.resx">
+    <EmbeddedResource Include="Formularios\frmMarcas.resx">
       <DependentUpon>frmMarcas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedores.resx">
+    <EmbeddedResource Include="Formularios\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporte2.resx">
+    <EmbeddedResource Include="Formularios\frmReporte2.resx">
       <DependentUpon>frmReporte2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,95 +211,95 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="rptFact.rdlc" />
-    <EmbeddedResource Include="Seguridad\frmLogin.resx">
+    <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="AlmacenTecnoDataSet.xsc">
+    <None Include="Datos\AlmacenTecnoDataSet.xsc">
       <DependentUpon>AlmacenTecnoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet.xsd">
+    <None Include="Datos\AlmacenTecnoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AlmacenTecnoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="AlmacenTecnoDataSet.xss">
+    <None Include="Datos\AlmacenTecnoDataSet.xss">
       <DependentUpon>AlmacenTecnoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet1.xsc">
+    <None Include="Datos\AlmacenTecnoDataSet1.xsc">
       <DependentUpon>AlmacenTecnoDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet1.xsd">
+    <None Include="Datos\AlmacenTecnoDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AlmacenTecnoDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="AlmacenTecnoDataSet1.xss">
+    <None Include="Datos\AlmacenTecnoDataSet1.xss">
       <DependentUpon>AlmacenTecnoDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet2.xsc">
+    <None Include="Datos\AlmacenTecnoDataSet2.xsc">
       <DependentUpon>AlmacenTecnoDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet2.xsd">
+    <None Include="Datos\AlmacenTecnoDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AlmacenTecnoDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="AlmacenTecnoDataSet2.xss">
+    <None Include="Datos\AlmacenTecnoDataSet2.xss">
       <DependentUpon>AlmacenTecnoDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet3.xsc">
+    <None Include="Datos\AlmacenTecnoDataSet3.xsc">
       <DependentUpon>AlmacenTecnoDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="AlmacenTecnoDataSet3.xsd">
+    <None Include="Datos\AlmacenTecnoDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AlmacenTecnoDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="AlmacenTecnoDataSet3.xss">
+    <None Include="Datos\AlmacenTecnoDataSet3.xss">
       <DependentUpon>AlmacenTecnoDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="Ds.xsc">
+    <None Include="Datos\Ds.xsc">
       <DependentUpon>Ds.xsd</DependentUpon>
     </None>
-    <None Include="Ds.xsd">
+    <None Include="Datos\Ds.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Ds.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Ds.xss">
+    <None Include="Datos\Ds.xss">
       <DependentUpon>Ds.xsd</DependentUpon>
     </None>
-    <None Include="dtsetArticulos.xsc">
+    <None Include="Datos\dtsetArticulos.xsc">
       <DependentUpon>dtsetArticulos.xsd</DependentUpon>
     </None>
-    <None Include="dtsetArticulos.xsd">
+    <None Include="Datos\dtsetArticulos.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dtsetArticulos.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="dtsetArticulos.xss">
+    <None Include="Datos\dtsetArticulos.xss">
       <DependentUpon>dtsetArticulos.xsd</DependentUpon>
     </None>
-    <None Include="dtsetEmpleado.xsc">
+    <None Include="Datos\dtsetEmpleado.xsc">
       <DependentUpon>dtsetEmpleado.xsd</DependentUpon>
     </None>
-    <None Include="dtsetEmpleado.xsd">
+    <None Include="Datos\dtsetEmpleado.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dtsetEmpleado.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="dtsetEmpleado.xss">
+    <None Include="Datos\dtsetEmpleado.xss">
       <DependentUpon>dtsetEmpleado.xsd</DependentUpon>
     </None>
-    <None Include="dtsetVentas.xsc">
+    <None Include="Datos\dtsetVentas.xsc">
       <DependentUpon>dtsetVentas.xsd</DependentUpon>
     </None>
-    <None Include="dtsetVentas.xsd">
+    <None Include="Datos\dtsetVentas.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dtsetVentas.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="dtsetVentas.xss">
+    <None Include="Datos\dtsetVentas.xss">
       <DependentUpon>dtsetVentas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />

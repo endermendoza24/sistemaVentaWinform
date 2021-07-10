@@ -9,16 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Facturacion.Logica;
 using Facturacion.Datos;
-using Facturacion.Seguridad;
+using Facturacion.Formularios;
+
 
 namespace Facturacion.Seguridad
 {
     public partial class frmLogin : Form
     {
         //  Instancias de las clases
+        
         clsValidacionUsuario vali = new clsValidacionUsuario();
         clsConexion cone = new clsConexion();
         frmInicio fr = new frmInicio();
+   
+        
 
         public void logueo()
         {
@@ -70,9 +74,11 @@ namespace Facturacion.Seguridad
             logueo();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
-            Application.Restart();
+
         }
     }
 }

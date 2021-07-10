@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Facturacion {
+namespace Facturacion.Datos {
     
     
     /// <summary>
@@ -701,7 +701,7 @@ namespace Facturacion {
         }
     }
 }
-namespace Facturacion.dtsetArticulosTableAdapters {
+namespace Facturacion.Datos.dtsetArticulosTableAdapters {
     
     
     /// <summary>

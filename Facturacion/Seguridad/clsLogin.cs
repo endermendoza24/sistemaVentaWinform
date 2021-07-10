@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
+
 namespace Facturacion.Seguridad
 {
    public class clsLogin
     {
         private string cadena = "Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True";
+
+        SqlConnection conexion = new SqlConnection("Data Source=.; Initial Catalog=AlmacenTecno;Integrated Security=True");     
+        SqlDataReader leer;
+        DataTable tabla = new DataTable();
+        SqlCommand comando = new SqlCommand();
+
 
         public Boolean IniciarSesion(string Usuario, string Password)
         {
@@ -26,5 +33,7 @@ namespace Facturacion.Seguridad
             return true;
 
         }
+
+        
     }
 }

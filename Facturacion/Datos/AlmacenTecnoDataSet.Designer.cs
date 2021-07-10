@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Facturacion {
+namespace Facturacion.Datos {
     
     
     /// <summary>
@@ -703,7 +703,7 @@ namespace Facturacion {
         }
     }
 }
-namespace Facturacion.AlmacenTecnoDataSetTableAdapters {
+namespace Facturacion.Datos.AlmacenTecnoDataSetTableAdapters {
     
     
     /// <summary>

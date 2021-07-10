@@ -1,4 +1,4 @@
-﻿namespace Facturacion
+﻿namespace Facturacion.Datos
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace Facturacion.DsTableAdapters
+namespace Facturacion.Datos.DsTableAdapters
 {
 
 
