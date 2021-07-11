@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Facturacion.Datos;
 using System.Configuration;
+using Facturacion.Formularios;
 
 namespace Facturacion
 {
@@ -112,6 +113,65 @@ namespace Facturacion
                 btnAgregar.Enabled = true;
             }
 
+
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void articulosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmArticulos art = new frmArticulos();
+            art.Show();
+
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarcas ma = new frmMarcas();
+            ma.Show();
+
+
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleados em = new frmEmpleados();
+            em.Show();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedores pr = new frmProveedores();
+            pr.Show();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentas ve = new frmVentas();
+            ve.Show();
+        }
+
+        private void cerrarSesiònToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea salir?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
 
         }
 

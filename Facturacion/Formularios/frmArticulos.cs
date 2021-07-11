@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Facturacion.Datos;
+using Facturacion.Formularios;
 
 namespace Facturacion
 {
@@ -165,11 +166,68 @@ namespace Facturacion
             Limpiar();
         }
 
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticulos art = new frmArticulos();
+            art.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmClientes cl = new frmClientes();
+            cl.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleados em = new frmEmpleados();
+            em.Show();
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarcas ma = new frmMarcas();
+            ma.Show();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedores pr = new frmProveedores();
+            pr.Show();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentas ve = new frmVentas();
+            ve.Show();
+        }
+
+        private void cerrarSesiònToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmInicio ini = new frmInicio();
+            ini.Show();
+        }
+
         public void Limpiar()
         {
             txtArticulo.Clear();
             cmbCategoria.SelectedIndex = 1;
-            cmbProveedor.SelectedIndex = 1;
+            //cmbProveedor.SelectedIndex = 1;
             cmbMarca.SelectedIndex = 1;
         }
     }

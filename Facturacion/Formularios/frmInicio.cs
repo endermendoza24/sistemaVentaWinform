@@ -30,35 +30,34 @@ namespace Facturacion
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEmpleados clientes = new frmEmpleados();
-            clientes.MdiParent = this;
+           
             clientes.Show();
         }
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMarcas marcas = new frmMarcas();
-            marcas.MdiParent = this;
+            //marcas.MdiParent = this;
             marcas.Show();
         }
 
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmClientes client = new frmClientes();
-            client.MdiParent = this;
+            frmClientes client = new frmClientes();            
             client.Show();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProveedores prov = new frmProveedores();
-            prov.MdiParent = this;
+            //prov.MdiParent = this;
             prov.Show();
         }
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmArticulos arti = new frmArticulos();
-            arti.MdiParent = this;
+            
             arti.Show();
 
         }
@@ -66,14 +65,18 @@ namespace Facturacion
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVentas ven = new frmVentas();
-            ven.MdiParent = this;
+            //ven.MdiParent = this;
             ven.Show();
         }
 
         private void cerrarSesiònToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Restart();
-        }
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+            }
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -93,11 +96,7 @@ namespace Facturacion
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmArticulos arti = new frmArticulos();
-            arti.Show();
-        }
+       
 
         private void tmrHora_Tick(object sender, EventArgs e)
         {
@@ -105,39 +104,67 @@ namespace Facturacion
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
 
-        private void ptbCliente_Click(object sender, EventArgs e)
+
+       
+
+       
+        
+
+       
+
+        private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnArt_Click(object sender, EventArgs e)
+        {
+            frmArticulos arti = new frmArticulos();
+            arti.Show();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
         {
             frmClientes cl = new frmClientes();
             cl.Show();
         }
 
-        private void ptbEmpleado_Click(object sender, EventArgs e)
+        private void btnEmple_Click(object sender, EventArgs e)
         {
             frmEmpleados empl = new frmEmpleados();
             empl.Show();
         }
 
-        private void ptbMarca_Click(object sender, EventArgs e)
+        private void btnMarca_Click(object sender, EventArgs e)
         {
             frmMarcas ma = new frmMarcas();
             ma.Show();
         }
 
-        private void ptbProveedor_Click(object sender, EventArgs e)
+        private void btnProveedor_Click(object sender, EventArgs e)
         {
             frmProveedores pro = new frmProveedores();
             pro.Show();
         }
 
-        private void ptbVenta_Click(object sender, EventArgs e)
+        private void btnVenta_Click(object sender, EventArgs e)
         {
             frmVentas vent = new frmVentas();
             vent.Show();
         }
 
-        private void ptbSalir_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

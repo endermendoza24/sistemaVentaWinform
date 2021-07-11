@@ -188,6 +188,78 @@ namespace Facturacion.Formularios
             UnPunto(e, txtPrecio.Text);
         }
 
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticulos art = new frmArticulos();
+            art.Show();
+
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmClientes cl = new frmClientes();
+            cl.Show();
+
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleados em = new frmEmpleados();
+            em.Show();
+
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarcas ma = new frmMarcas();
+            ma.Show();
+
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedores pr = new frmProveedores();
+            pr.Show();
+
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentas ve = new frmVentas();
+            ve.Show();
+
+        }
+
+        private void cerrarSesiònToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea salir?", "Usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtCantidad_Leave(object sender, EventArgs e)
         {
             

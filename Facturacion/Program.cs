@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Facturacion.Seguridad;
 using Facturacion.Formularios;
 
 namespace Facturacion
@@ -19,7 +18,7 @@ namespace Facturacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInicio());
+            Application.Run(new frmSplashScreen());
         }
     }
 }

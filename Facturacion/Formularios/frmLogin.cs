@@ -32,7 +32,7 @@ namespace Facturacion.Seguridad
             data = cone.validacion(vali);
             if(data.Rows.Count > 0)
             {
-                MessageBox.Show("Bienvenido " + data.Rows[0][1].ToString(), "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Bienvenido " + data.Rows[0][0].ToString(), "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 fr.ShowDialog();
 

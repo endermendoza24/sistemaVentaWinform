@@ -62,6 +62,17 @@ namespace Facturacion
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mdiDato = new System.Windows.Forms.MenuStrip();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catàlogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiònToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.catMarcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).BeginInit();
@@ -74,6 +85,7 @@ namespace Facturacion
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catArticulosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArticulos)).BeginInit();
+            this.mdiDato.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDatos
@@ -90,7 +102,7 @@ namespace Facturacion
             this.grpDatos.Controls.Add(this.txtArticulo);
             this.grpDatos.Controls.Add(this.label1);
             this.grpDatos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDatos.Location = new System.Drawing.Point(13, 13);
+            this.grpDatos.Location = new System.Drawing.Point(13, 27);
             this.grpDatos.Name = "grpDatos";
             this.grpDatos.Size = new System.Drawing.Size(661, 249);
             this.grpDatos.TabIndex = 0;
@@ -295,6 +307,7 @@ namespace Facturacion
             // 
             // dtgArticulos
             // 
+            this.dtgArticulos.AllowUserToAddRows = false;
             this.dtgArticulos.AutoGenerateColumns = false;
             this.dtgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -346,17 +359,107 @@ namespace Facturacion
             this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
             this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
             // 
+            // mdiDato
+            // 
+            this.mdiDato.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem,
+            this.catàlogosToolStripMenuItem,
+            this.ventasToolStripMenuItem,
+            this.cerrarSesiònToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.mdiDato.Location = new System.Drawing.Point(0, 0);
+            this.mdiDato.MdiWindowListItem = this.catàlogosToolStripMenuItem;
+            this.mdiDato.Name = "mdiDato";
+            this.mdiDato.Size = new System.Drawing.Size(691, 24);
+            this.mdiDato.TabIndex = 2;
+            this.mdiDato.Text = "menuStrip1";
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click_1);
+            // 
+            // catàlogosToolStripMenuItem
+            // 
+            this.catàlogosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem,
+            this.clientesToolStripMenuItem1,
+            this.clientesToolStripMenuItem,
+            this.marcasToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
+            this.catàlogosToolStripMenuItem.Name = "catàlogosToolStripMenuItem";
+            this.catàlogosToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.catàlogosToolStripMenuItem.Text = "Catálogos";
+            // 
+            // articulosToolStripMenuItem
+            // 
+            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.clientesToolStripMenuItem.Text = "Empleado";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // marcasToolStripMenuItem
+            // 
+            this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.marcasToolStripMenuItem.Text = "Marcas";
+            this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // cerrarSesiònToolStripMenuItem
+            // 
+            this.cerrarSesiònToolStripMenuItem.Name = "cerrarSesiònToolStripMenuItem";
+            this.cerrarSesiònToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cerrarSesiònToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiònToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiònToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(691, 450);
+            this.Controls.Add(this.mdiDato);
             this.Controls.Add(this.dtgArticulos);
             this.Controls.Add(this.grpDatos);
             this.Name = "frmArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArticulos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
@@ -371,7 +474,10 @@ namespace Facturacion
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catArticulosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArticulos)).EndInit();
+            this.mdiDato.ResumeLayout(false);
+            this.mdiDato.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -409,5 +515,16 @@ namespace Facturacion
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedoresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.MenuStrip mdiDato;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catàlogosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiònToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

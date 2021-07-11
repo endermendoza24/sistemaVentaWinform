@@ -36,24 +36,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtgEmpleado = new System.Windows.Forms.DataGridView();
+            this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primerNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaEntradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtsetEmpleado = new Facturacion.Datos.dtsetEmpleado();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnBorrarEmpleado = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.grbDataClientes = new System.Windows.Forms.GroupBox();
-            this.dtsetEmpleado = new Facturacion.Datos.dtsetEmpleado();
-            this.catEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catEmpleadosTableAdapter = new Facturacion.Datos.dtsetEmpleadoTableAdapters.catEmpleadosTableAdapter();
-            this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primerNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEntradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mdiDato = new System.Windows.Forms.MenuStrip();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catàlogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiònToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).BeginInit();
-            this.grbDataClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsetEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catEmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtsetEmpleado)).BeginInit();
+            this.grbDataClientes.SuspendLayout();
+            this.mdiDato.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +144,52 @@
             this.dtgEmpleado.TabIndex = 8;
             this.dtgEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEmpleado_CellClick);
             // 
+            // idEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.idEmpleadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado";
+            this.idEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado";
+            this.idEmpleadoDataGridViewTextBoxColumn.Name = "idEmpleadoDataGridViewTextBoxColumn";
+            this.idEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numCedulaDataGridViewTextBoxColumn
+            // 
+            this.numCedulaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula";
+            this.numCedulaDataGridViewTextBoxColumn.HeaderText = "numCedula";
+            this.numCedulaDataGridViewTextBoxColumn.Name = "numCedulaDataGridViewTextBoxColumn";
+            // 
+            // primerNombreDataGridViewTextBoxColumn
+            // 
+            this.primerNombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.primerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre";
+            this.primerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre";
+            this.primerNombreDataGridViewTextBoxColumn.Name = "primerNombreDataGridViewTextBoxColumn";
+            // 
+            // primerApellidoDataGridViewTextBoxColumn
+            // 
+            this.primerApellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.primerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido";
+            this.primerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido";
+            this.primerApellidoDataGridViewTextBoxColumn.Name = "primerApellidoDataGridViewTextBoxColumn";
+            // 
+            // fechaEntradaDataGridViewTextBoxColumn
+            // 
+            this.fechaEntradaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaEntradaDataGridViewTextBoxColumn.DataPropertyName = "fechaEntrada";
+            this.fechaEntradaDataGridViewTextBoxColumn.HeaderText = "fechaEntrada";
+            this.fechaEntradaDataGridViewTextBoxColumn.Name = "fechaEntradaDataGridViewTextBoxColumn";
+            // 
+            // catEmpleadosBindingSource
+            // 
+            this.catEmpleadosBindingSource.DataMember = "catEmpleados";
+            this.catEmpleadosBindingSource.DataSource = this.dtsetEmpleado;
+            // 
+            // dtsetEmpleado
+            // 
+            this.dtsetEmpleado.DataSetName = "dtsetEmpleado";
+            this.dtsetEmpleado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(73, 142);
@@ -195,80 +253,125 @@
             this.grbDataClientes.Controls.Add(this.txtNombre);
             this.grbDataClientes.Controls.Add(this.label2);
             this.grbDataClientes.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDataClientes.Location = new System.Drawing.Point(13, 13);
+            this.grbDataClientes.Location = new System.Drawing.Point(12, 27);
             this.grbDataClientes.Name = "grbDataClientes";
             this.grbDataClientes.Size = new System.Drawing.Size(721, 419);
             this.grbDataClientes.TabIndex = 10;
             this.grbDataClientes.TabStop = false;
             this.grbDataClientes.Text = "Datos empleado";
             // 
-            // dtsetEmpleado
-            // 
-            this.dtsetEmpleado.DataSetName = "dtsetEmpleado";
-            this.dtsetEmpleado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // catEmpleadosBindingSource
-            // 
-            this.catEmpleadosBindingSource.DataMember = "catEmpleados";
-            this.catEmpleadosBindingSource.DataSource = this.dtsetEmpleado;
-            // 
             // catEmpleadosTableAdapter
             // 
             this.catEmpleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // idEmpleadoDataGridViewTextBoxColumn
+            // mdiDato
             // 
-            this.idEmpleadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.Name = "idEmpleadoDataGridViewTextBoxColumn";
-            this.idEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mdiDato.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem,
+            this.catàlogosToolStripMenuItem,
+            this.ventasToolStripMenuItem,
+            this.cerrarSesiònToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.mdiDato.Location = new System.Drawing.Point(0, 0);
+            this.mdiDato.MdiWindowListItem = this.catàlogosToolStripMenuItem;
+            this.mdiDato.Name = "mdiDato";
+            this.mdiDato.Size = new System.Drawing.Size(745, 24);
+            this.mdiDato.TabIndex = 11;
+            this.mdiDato.Text = "menuStrip1";
             // 
-            // numCedulaDataGridViewTextBoxColumn
+            // inicioToolStripMenuItem
             // 
-            this.numCedulaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.numCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula";
-            this.numCedulaDataGridViewTextBoxColumn.HeaderText = "numCedula";
-            this.numCedulaDataGridViewTextBoxColumn.Name = "numCedulaDataGridViewTextBoxColumn";
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.inicioToolStripMenuItem.Text = "Inicio";
             // 
-            // primerNombreDataGridViewTextBoxColumn
+            // catàlogosToolStripMenuItem
             // 
-            this.primerNombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.primerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre";
-            this.primerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre";
-            this.primerNombreDataGridViewTextBoxColumn.Name = "primerNombreDataGridViewTextBoxColumn";
+            this.catàlogosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem,
+            this.clientesToolStripMenuItem1,
+            this.clientesToolStripMenuItem,
+            this.marcasToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
+            this.catàlogosToolStripMenuItem.Name = "catàlogosToolStripMenuItem";
+            this.catàlogosToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.catàlogosToolStripMenuItem.Text = "Catálogos";
             // 
-            // primerApellidoDataGridViewTextBoxColumn
+            // articulosToolStripMenuItem
             // 
-            this.primerApellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.primerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido";
-            this.primerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido";
-            this.primerApellidoDataGridViewTextBoxColumn.Name = "primerApellidoDataGridViewTextBoxColumn";
+            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
-            // fechaEntradaDataGridViewTextBoxColumn
+            // clientesToolStripMenuItem1
             // 
-            this.fechaEntradaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaEntradaDataGridViewTextBoxColumn.DataPropertyName = "fechaEntrada";
-            this.fechaEntradaDataGridViewTextBoxColumn.HeaderText = "fechaEntrada";
-            this.fechaEntradaDataGridViewTextBoxColumn.Name = "fechaEntradaDataGridViewTextBoxColumn";
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click_1);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.clientesToolStripMenuItem.Text = "Empleado";
+            // 
+            // marcasToolStripMenuItem
+            // 
+            this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.marcasToolStripMenuItem.Text = "Marcas";
+            this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click_1);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // cerrarSesiònToolStripMenuItem
+            // 
+            this.cerrarSesiònToolStripMenuItem.Name = "cerrarSesiònToolStripMenuItem";
+            this.cerrarSesiònToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cerrarSesiònToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiònToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiònToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 464);
+            this.Controls.Add(this.mdiDato);
             this.Controls.Add(this.grbDataClientes);
             this.Name = "frmEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmpleados";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catEmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtsetEmpleado)).EndInit();
             this.grbDataClientes.ResumeLayout(false);
             this.grbDataClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsetEmpleado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catEmpleadosBindingSource)).EndInit();
+            this.mdiDato.ResumeLayout(false);
+            this.mdiDato.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -295,5 +398,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn primerNombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn primerApellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.MenuStrip mdiDato;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catàlogosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiònToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
