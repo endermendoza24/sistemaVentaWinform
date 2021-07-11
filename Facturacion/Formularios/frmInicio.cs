@@ -7,13 +7,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Facturacion.Datos;
 using System.Windows.Forms;
-
+using Facturacion.Logica;
 
 namespace Facturacion
 {
     public partial class frmInicio : Form
     {
+
+       
         public frmInicio()
         {
             InitializeComponent();
@@ -77,6 +80,64 @@ namespace Facturacion
             //frmReporteGeneral rep = new frmReporteGeneral();
             //rep.MdiParent = this;
             //rep.Show();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+        }
+
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+            tmrHora.Enabled = true;            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmArticulos arti = new frmArticulos();
+            arti.Show();
+        }
+
+        private void tmrHora_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void ptbCliente_Click(object sender, EventArgs e)
+        {
+            frmClientes cl = new frmClientes();
+            cl.Show();
+        }
+
+        private void ptbEmpleado_Click(object sender, EventArgs e)
+        {
+            frmEmpleados empl = new frmEmpleados();
+            empl.Show();
+        }
+
+        private void ptbMarca_Click(object sender, EventArgs e)
+        {
+            frmMarcas ma = new frmMarcas();
+            ma.Show();
+        }
+
+        private void ptbProveedor_Click(object sender, EventArgs e)
+        {
+            frmProveedores pro = new frmProveedores();
+            pro.Show();
+        }
+
+        private void ptbVenta_Click(object sender, EventArgs e)
+        {
+            frmVentas vent = new frmVentas();
+            vent.Show();
+        }
+
+        private void ptbSalir_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

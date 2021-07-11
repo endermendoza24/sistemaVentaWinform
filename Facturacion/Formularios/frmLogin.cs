@@ -80,5 +80,10 @@ namespace Facturacion.Seguridad
         {
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
