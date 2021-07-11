@@ -35,8 +35,8 @@ namespace Facturacion
             DialogResult dialogResult = MessageBox.Show("¿Desea guardar?", "Usuario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                try
-                {
+                //try
+                //{
                     string cedu, nombre, apell;
                     DateTime fcha;
 
@@ -49,20 +49,25 @@ namespace Facturacion
 
 
                     emple.InsertarEmpleado(cedu, nombre, apell, fcha);
-                    
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Ha ocurrido un error","Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                
+                    btnBorrarEmpleado.Enabled = true;
+                    btnEditar.Enabled = true;
+                //}
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("Ha ocurrido un error","Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                //}
+                Limpiar();
             }
             }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            MostrarEmpleado();
-           
+            // TODO: esta línea de código carga datos en la tabla 'dtsetEmpleado.catEmpleados' Puede moverla o quitarla según sea necesario.
+            this.catEmpleadosTableAdapter.Fill(this.dtsetEmpleado.catEmpleados);
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnBorrarEmpleado.Enabled = false;
+
         }
 
         private void btnBorrarEmpleado_Click(object sender, EventArgs e)
@@ -84,9 +89,17 @@ namespace Facturacion
             {
                 MessageBox.Show("Ocurrio un error inesperado, dato está enlazado.");
             }
-}
+            Limpiar();
+        }
 
-        
+        public void Limpiar()
+        {
+            txtCedula.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+        }
+
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -146,6 +159,18 @@ namespace Facturacion
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void dtFecha_ValueChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtCedula.Text) || String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtApellido.Text))
+            {
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+            }
         }
 
         private void dtgEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -33,7 +33,9 @@ namespace Facturacion
             this.catMarcasTableAdapter.Fill(this.almacenTecnoDataSet1.catMarcas);
             // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet.catProveedores' Puede moverla o quitarla según sea necesario.
             this.catProveedoresTableAdapter.Fill(this.almacenTecnoDataSet.catProveedores);
-
+            btnGuardar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnBorrar.Enabled = false;
         }
 
         //  funci[on de guardar
@@ -95,6 +97,7 @@ namespace Facturacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
+            Limpiar();
         }
 
         
@@ -131,6 +134,7 @@ namespace Facturacion
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             Borrar();
+            Limpiar();
         }
 
         private void txtArticulo_TextChanged(object sender, EventArgs e)
@@ -148,9 +152,25 @@ namespace Facturacion
             }
         }
 
+        private void cmbMarca_DropDown(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            btnEditar.Enabled = true;
+            btnBorrar.Enabled = true;
+            Limpiar();
+        }
+
+        public void Limpiar()
+        {
+            txtArticulo.Clear();
+            cmbCategoria.SelectedIndex = 1;
+            cmbProveedor.SelectedIndex = 1;
+            cmbMarca.SelectedIndex = 1;
         }
     }
 }

@@ -489,7 +489,9 @@ namespace Facturacion.Formularios
             this.Controls.Add(this.dtgVentas);
             this.Controls.Add(this.grbDatos);
             this.Name = "frmVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVentas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmVentas_Load);
             this.grbDatos.ResumeLayout(false);
             this.grbDatos.PerformLayout();

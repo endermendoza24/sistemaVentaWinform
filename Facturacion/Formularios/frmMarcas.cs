@@ -37,6 +37,7 @@ namespace Facturacion
                     marca.InsertarMarca(nombreMarca);
                     btnModificar.Enabled = true;
                     btnBorrar.Enabled = true;
+                    txtNombreMarca.Clear();
                 }
                 catch (Exception)
                 {
@@ -55,7 +56,7 @@ namespace Facturacion
                    idMarca  = dtgMarca.CurrentRow.Cells["idMarca"].Value.ToString();
                     marca.Eliminar(idMarca);                    
                     MessageBox.Show("Eliminado correctamente");
-
+                    txtNombreMarca.Clear();
                 }
                 else
                     MessageBox.Show("seleccione una fila por favor");
@@ -83,6 +84,9 @@ namespace Facturacion
         {
             // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet1.catMarcas' Puede moverla o quitarla según sea necesario.
             this.catMarcasTableAdapter.Fill(this.almacenTecnoDataSet1.catMarcas);
+            btnBorrar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnAgregar.Enabled = false;
         }
 
         private void txtNombreMarca_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,6 +102,17 @@ namespace Facturacion
         {
             txtNombreMarca.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombreMarca.Text);
             txtNombreMarca.SelectionStart = txtNombreMarca.Text.Length;
+
+            if (String.IsNullOrEmpty(txtNombreMarca.Text))
+            {
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -111,6 +126,7 @@ namespace Facturacion
                     nombreMarca = txtNombreMarca.Text;
 
                     marca.EditarMarcas(id, nombreMarca);
+                    txtNombreMarca.Clear();
 
                 }
                 catch (Exception ex)

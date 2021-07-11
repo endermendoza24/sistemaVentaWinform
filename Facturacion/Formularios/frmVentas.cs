@@ -38,6 +38,9 @@ namespace Facturacion.Formularios
             this.catEmpleadosTableAdapter.Fill(this.dtsetEmpleado.catEmpleados);
             // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet3.tblClientes' Puede moverla o quitarla según sea necesario.
             this.tblClientesTableAdapter.Fill(this.dtsetCliente.tblClientes);
+            btnGuardar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnBorrar.Enabled = false;
 
         }
 
@@ -67,6 +70,8 @@ namespace Facturacion.Formularios
 
                     vent.CrearVenta(fecha, idCliente, idEmpleado, idArticulo, cantidad,
                         precio, iva, descuento, total);
+                    btnEditar.Enabled = true;
+                    btnBorrar.Enabled = true;
 
             }
                 catch (Exception)
@@ -203,6 +208,16 @@ namespace Facturacion.Formularios
             total = iva - descuento;
             txtDescuento.Text = descuento.ToString();
             txtTotal.Text = total.ToString();
+
+
+            if (String.IsNullOrEmpty(txtCantidad.Text) && String.IsNullOrEmpty(txtPrecio.Text) )
+            {
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+            }
         }
 
         //  eliminar

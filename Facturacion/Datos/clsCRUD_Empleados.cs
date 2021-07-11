@@ -68,6 +68,7 @@ namespace Facturacion.Datos
             agregar.Parameters.AddWithValue("@primerApellido", primerApellido);
             agregar.Parameters.AddWithValue("@fechaEntrada", fechaEntrada);
             agregar.ExecuteNonQuery();
+            conexion.Close();
         }
 
         public DataTable mostrarProd()

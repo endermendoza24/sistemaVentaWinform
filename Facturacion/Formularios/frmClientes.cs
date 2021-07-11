@@ -42,14 +42,14 @@ namespace Facturacion
 
                     btnEditar.Enabled = true;
                     btnBorrarCliente.Enabled = true;
-                    clien.InsertarCliente(cedu, nombre, apell);
+                    clien.InsertarCliente(cedu, nombre, apell);                   
 
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Ha ocurrido un error", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
-
+                Limpiar();
             }
         }
 
@@ -60,7 +60,15 @@ namespace Facturacion
             btnGuardar.Enabled = false;
             btnEditar.Enabled = false;
             btnBorrarCliente.Enabled = false;
+            txtCedula.Focus();
 
+        }
+
+        public void Limpiar()
+        {
+            txtCedula.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
         }
 
      
@@ -110,6 +118,7 @@ namespace Facturacion
             {
                 MessageBox.Show("Ocurrio un error inesperado");
             }
+            Limpiar();
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
@@ -155,6 +164,11 @@ namespace Facturacion
                 btnGuardar.Enabled = true;
             }
 
+
+        }
+
+        private void grbCliente_Enter(object sender, EventArgs e)
+        {
 
         }
 

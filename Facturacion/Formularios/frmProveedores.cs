@@ -44,19 +44,21 @@ namespace Facturacion
             DialogResult dialogResult = MessageBox.Show("¿Desea guardar?", "Usuario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //try
-                //{
+                try
+                {
                     string nombreProveedor, correo, telefono, ciudad;
                     nombreProveedor = txtNombre.Text;
                     correo = txtCorreo.Text;
                     telefono = txtTelefono.Text;
                     ciudad = txtCiudad.Text;
                     prov.InsertarProveedor(nombreProveedor, correo, telefono, ciudad);
-                //}
-                //catch (Exception)
-                //{
-                //    MessageBox.Show("Ha ocurrido un error", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                //}
+                    btnEditar.Enabled = true;
+                    btnBorrar.Enabled = true;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ha ocurrido un error", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
 
             }
         }
@@ -130,7 +132,9 @@ namespace Facturacion
         {
             // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet.catProveedores' Puede moverla o quitarla según sea necesario.
             this.catProveedoresTableAdapter.Fill(this.almacenTecnoDataSet.catProveedores);
-          
+            btnGuardar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnBorrar.Enabled = false;
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -158,6 +162,17 @@ namespace Facturacion
         {
             txtCiudad.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtCiudad.Text);
             txtCiudad.SelectionStart = txtCiudad.Text.Length;
+
+
+            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtCorreo.Text) || String.IsNullOrEmpty(txtTelefono.Text) || String.IsNullOrEmpty(txtCiudad.Text))
+            {
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+            }
+
         }
 
         private void txtCiudad_KeyPress(object sender, KeyPressEventArgs e)

@@ -31,6 +31,7 @@ namespace Facturacion
         {
             this.components = new System.ComponentModel.Container();
             this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@ namespace Facturacion
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.catMarcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).BeginInit();
@@ -96,6 +96,35 @@ namespace Facturacion
             this.grpDatos.TabIndex = 0;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Obtener datos";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "PC",
+            "Laptops",
+            "Celulares",
+            "Tablets",
+            "Dispositivos de lectura",
+            "Teclados",
+            "Bocinas",
+            "Lasers",
+            "Pizarras",
+            "Proyector",
+            "iPads",
+            "Cables usb",
+            "Cable vga",
+            "Cable tipo C",
+            "Mouse",
+            "Memorias",
+            "Disco duros",
+            "SSD",
+            "Pantallas"});
+            this.cmbCategoria.Location = new System.Drawing.Point(467, 48);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 27);
+            this.cmbCategoria.TabIndex = 8;
             // 
             // btnBorrar
             // 
@@ -132,6 +161,7 @@ namespace Facturacion
             this.cmbMarca.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.catMarcasBindingSource, "idMarca", true));
             this.cmbMarca.DataSource = this.catMarcasBindingSource;
             this.cmbMarca.DisplayMember = "nombreMarca";
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(467, 132);
             this.cmbMarca.Name = "cmbMarca";
@@ -172,6 +202,7 @@ namespace Facturacion
             this.cmbProveedor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.catProveedoresBindingSource, "idProveedor", true));
             this.cmbProveedor.DataSource = this.catProveedoresBindingSource;
             this.cmbProveedor.DisplayMember = "nombreProveedor";
+            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.FormattingEnabled = true;
             this.cmbProveedor.Location = new System.Drawing.Point(153, 129);
             this.cmbProveedor.Name = "cmbProveedor";
@@ -315,34 +346,6 @@ namespace Facturacion
             this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
             this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
             // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "PC",
-            "Laptops",
-            "Celulares",
-            "Tablets",
-            "Dispositivos de lectura",
-            "Teclados",
-            "Bocinas",
-            "Lasers",
-            "Pizarras",
-            "Proyector",
-            "iPads",
-            "Cables usb",
-            "Cable vga",
-            "Cable tipo C",
-            "Mouse",
-            "Memorias",
-            "Disco duros",
-            "SSD",
-            "Pantallas"});
-            this.cmbCategoria.Location = new System.Drawing.Point(467, 48);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 27);
-            this.cmbCategoria.TabIndex = 8;
-            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +354,9 @@ namespace Facturacion
             this.Controls.Add(this.dtgArticulos);
             this.Controls.Add(this.grpDatos);
             this.Name = "frmArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArticulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();

@@ -34,6 +34,12 @@ namespace Facturacion
             this.btnBorrarCliente = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
+            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primerNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenTecnoDataSet3 = new Facturacion.Datos.AlmacenTecnoDataSet3();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,21 +47,16 @@ namespace Facturacion
             this.label1 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.grbCliente = new System.Windows.Forms.GroupBox();
-            this.almacenTecnoDataSet3 = new Facturacion.Datos.AlmacenTecnoDataSet3();
-            this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblClientesTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSet3TableAdapters.tblClientesTableAdapter();
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primerNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
-            this.grbCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet3)).BeginInit();
+            this.grbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEditar
             // 
+            this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(469, 91);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 35);
@@ -66,6 +67,7 @@ namespace Facturacion
             // 
             // btnBorrarCliente
             // 
+            this.btnBorrarCliente.Enabled = false;
             this.btnBorrarCliente.Location = new System.Drawing.Point(275, 91);
             this.btnBorrarCliente.Name = "btnBorrarCliente";
             this.btnBorrarCliente.Size = new System.Drawing.Size(100, 35);
@@ -76,6 +78,7 @@ namespace Facturacion
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(81, 91);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 35);
@@ -99,6 +102,45 @@ namespace Facturacion
             this.dtgCliente.Size = new System.Drawing.Size(649, 218);
             this.dtgCliente.TabIndex = 20;
             this.dtgCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellClick);
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            this.idClienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numCedulaDataGridViewTextBoxColumn
+            // 
+            this.numCedulaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula";
+            this.numCedulaDataGridViewTextBoxColumn.HeaderText = "numCedula";
+            this.numCedulaDataGridViewTextBoxColumn.Name = "numCedulaDataGridViewTextBoxColumn";
+            // 
+            // primerNombreDataGridViewTextBoxColumn
+            // 
+            this.primerNombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.primerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre";
+            this.primerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre";
+            this.primerNombreDataGridViewTextBoxColumn.Name = "primerNombreDataGridViewTextBoxColumn";
+            // 
+            // primerApellidoDataGridViewTextBoxColumn
+            // 
+            this.primerApellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.primerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido";
+            this.primerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido";
+            this.primerApellidoDataGridViewTextBoxColumn.Name = "primerApellidoDataGridViewTextBoxColumn";
+            // 
+            // tblClientesBindingSource
+            // 
+            this.tblClientesBindingSource.DataMember = "tblClientes";
+            this.tblClientesBindingSource.DataSource = this.almacenTecnoDataSet3;
+            // 
+            // almacenTecnoDataSet3
+            // 
+            this.almacenTecnoDataSet3.DataSetName = "AlmacenTecnoDataSet3";
+            this.almacenTecnoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -176,49 +218,11 @@ namespace Facturacion
             this.grbCliente.TabIndex = 22;
             this.grbCliente.TabStop = false;
             this.grbCliente.Text = "Datos cliente";
-            // 
-            // almacenTecnoDataSet3
-            // 
-            this.almacenTecnoDataSet3.DataSetName = "AlmacenTecnoDataSet3";
-            this.almacenTecnoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblClientesBindingSource
-            // 
-            this.tblClientesBindingSource.DataMember = "tblClientes";
-            this.tblClientesBindingSource.DataSource = this.almacenTecnoDataSet3;
+            this.grbCliente.Enter += new System.EventHandler(this.grbCliente_Enter);
             // 
             // tblClientesTableAdapter
             // 
             this.tblClientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // idClienteDataGridViewTextBoxColumn
-            // 
-            this.idClienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numCedulaDataGridViewTextBoxColumn
-            // 
-            this.numCedulaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.numCedulaDataGridViewTextBoxColumn.DataPropertyName = "numCedula";
-            this.numCedulaDataGridViewTextBoxColumn.HeaderText = "numCedula";
-            this.numCedulaDataGridViewTextBoxColumn.Name = "numCedulaDataGridViewTextBoxColumn";
-            // 
-            // primerNombreDataGridViewTextBoxColumn
-            // 
-            this.primerNombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.primerNombreDataGridViewTextBoxColumn.DataPropertyName = "primerNombre";
-            this.primerNombreDataGridViewTextBoxColumn.HeaderText = "primerNombre";
-            this.primerNombreDataGridViewTextBoxColumn.Name = "primerNombreDataGridViewTextBoxColumn";
-            // 
-            // primerApellidoDataGridViewTextBoxColumn
-            // 
-            this.primerApellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.primerApellidoDataGridViewTextBoxColumn.DataPropertyName = "primerApellido";
-            this.primerApellidoDataGridViewTextBoxColumn.HeaderText = "primerApellido";
-            this.primerApellidoDataGridViewTextBoxColumn.Name = "primerApellidoDataGridViewTextBoxColumn";
             // 
             // frmClientes
             // 
@@ -232,10 +236,10 @@ namespace Facturacion
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet3)).EndInit();
             this.grbCliente.ResumeLayout(false);
             this.grbCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

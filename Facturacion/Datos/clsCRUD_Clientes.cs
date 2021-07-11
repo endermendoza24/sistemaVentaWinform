@@ -28,7 +28,7 @@ namespace Facturacion.Datos
 
 
             comando.ExecuteNonQuery();
-
+            conet.CerrarConexion();
         }
         public void Eliminar(string idCliente)
         {
@@ -52,6 +52,7 @@ namespace Facturacion.Datos
             agregar.Parameters.AddWithValue("@primerNombre", primerNombre);
             agregar.Parameters.AddWithValue("@primerApellido", primerApellido);            
             agregar.ExecuteNonQuery();
+            conexion.Close();
         }
 
       

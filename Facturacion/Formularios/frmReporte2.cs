@@ -20,7 +20,7 @@ namespace Facturacion
 
         private void frmReporte2_Load(object sender, EventArgs e)
         {
-           
+            btnFact.Enabled = false;
         }
 
         private void btnFact_Click(object sender, EventArgs e)
@@ -38,6 +38,27 @@ namespace Facturacion
             catch (FormatException)
             {
                 MessageBox.Show("Debe ingresar un valor valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtFact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtFact_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtFact.Text))
+            {
+                btnFact.Enabled = false;
+            }
+            else
+            {
+                btnFact.Enabled = true;
             }
         }
     }
