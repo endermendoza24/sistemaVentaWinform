@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Facturacion.Datos;
@@ -137,8 +139,40 @@ namespace Facturacion
             
         }
 
-        
-        
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {                
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCiudad_TextChanged(object sender, EventArgs e)
+        {
+            txtCiudad.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtCiudad.Text);
+            txtCiudad.SelectionStart = txtCiudad.Text.Length;
+        }
+
+        private void txtCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -146,6 +180,28 @@ namespace Facturacion
            
         }
 
-       
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCorreo_Validating(object sender, CancelEventArgs e)
+        {
+            ValidarEmail(txtCorreo.Text);
+        }
+
+        static bool ValidarEmail(string email)
+        {
+            return email != null && Regex.IsMatch(email, "/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/");
+        }
     }
 }

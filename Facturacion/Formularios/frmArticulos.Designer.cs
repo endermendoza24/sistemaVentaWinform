@@ -31,25 +31,24 @@ namespace Facturacion
         {
             this.components = new System.ComponentModel.Container();
             this.grpDatos = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtArticulo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
-            this.almacenTecnoDataSet = new Facturacion.Datos.AlmacenTecnoDataSet();
-            this.almacenTecnoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catProveedoresTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.almacenTecnoDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.almacenTecnoDataSet1 = new Facturacion.Datos.AlmacenTecnoDataSet1();
-            this.catMarcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catMarcasTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSet1TableAdapters.catMarcasTableAdapter();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.catMarcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenTecnoDataSet1 = new Facturacion.Datos.AlmacenTecnoDataSet1();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.catProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenTecnoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenTecnoDataSet = new Facturacion.Datos.AlmacenTecnoDataSet();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtArticulo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.catProveedoresTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
+            this.almacenTecnoDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.catMarcasTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSet1TableAdapters.catMarcasTableAdapter();
             this.dtsetArticulos = new Facturacion.Datos.dtsetArticulos();
             this.catArticulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catArticulosTableAdapter = new Facturacion.Datos.dtsetArticulosTableAdapters.catArticulosTableAdapter();
@@ -62,13 +61,14 @@ namespace Facturacion
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.grpDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catMarcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsetArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catArticulosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet2)).BeginInit();
@@ -78,12 +78,12 @@ namespace Facturacion
             // 
             // grpDatos
             // 
+            this.grpDatos.Controls.Add(this.cmbCategoria);
             this.grpDatos.Controls.Add(this.btnBorrar);
             this.grpDatos.Controls.Add(this.btnEditar);
             this.grpDatos.Controls.Add(this.btnGuardar);
             this.grpDatos.Controls.Add(this.cmbMarca);
             this.grpDatos.Controls.Add(this.label4);
-            this.grpDatos.Controls.Add(this.txtCategoria);
             this.grpDatos.Controls.Add(this.label3);
             this.grpDatos.Controls.Add(this.cmbProveedor);
             this.grpDatos.Controls.Add(this.label2);
@@ -97,86 +97,35 @@ namespace Facturacion
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Obtener datos";
             // 
-            // label1
+            // btnBorrar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre articulo";
+            this.btnBorrar.Location = new System.Drawing.Point(320, 201);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(89, 35);
+            this.btnBorrar.TabIndex = 7;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // txtArticulo
+            // btnEditar
             // 
-            this.txtArticulo.Location = new System.Drawing.Point(150, 48);
-            this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(100, 27);
-            this.txtArticulo.TabIndex = 1;
+            this.btnEditar.Location = new System.Drawing.Point(195, 201);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(89, 35);
+            this.btnEditar.TabIndex = 6;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label2
+            // btnGuardar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Id proveedor";
-            // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.catProveedoresBindingSource, "idProveedor", true));
-            this.cmbProveedor.DataSource = this.catProveedoresBindingSource;
-            this.cmbProveedor.DisplayMember = "nombreProveedor";
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(153, 129);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(167, 27);
-            this.cmbProveedor.TabIndex = 3;
-            this.cmbProveedor.ValueMember = "idProveedor";
-            // 
-            // almacenTecnoDataSet
-            // 
-            this.almacenTecnoDataSet.DataSetName = "AlmacenTecnoDataSet";
-            this.almacenTecnoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // almacenTecnoDataSetBindingSource
-            // 
-            this.almacenTecnoDataSetBindingSource.DataSource = this.almacenTecnoDataSet;
-            this.almacenTecnoDataSetBindingSource.Position = 0;
-            // 
-            // catProveedoresBindingSource
-            // 
-            this.catProveedoresBindingSource.DataMember = "catProveedores";
-            this.catProveedoresBindingSource.DataSource = this.almacenTecnoDataSetBindingSource;
-            // 
-            // catProveedoresTableAdapter
-            // 
-            this.catProveedoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(467, 48);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(100, 27);
-            this.txtCategoria.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Categoria";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(358, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Id marca";
+            this.btnGuardar.Location = new System.Drawing.Point(71, 201);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(89, 35);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbMarca
             // 
@@ -190,54 +139,100 @@ namespace Facturacion
             this.cmbMarca.TabIndex = 4;
             this.cmbMarca.ValueMember = "idMarca";
             // 
-            // almacenTecnoDataSetBindingSource1
+            // catMarcasBindingSource
             // 
-            this.almacenTecnoDataSetBindingSource1.DataSource = this.almacenTecnoDataSet;
-            this.almacenTecnoDataSetBindingSource1.Position = 0;
+            this.catMarcasBindingSource.DataMember = "catMarcas";
+            this.catMarcasBindingSource.DataSource = this.almacenTecnoDataSet1;
             // 
             // almacenTecnoDataSet1
             // 
             this.almacenTecnoDataSet1.DataSetName = "AlmacenTecnoDataSet1";
             this.almacenTecnoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // catMarcasBindingSource
+            // label4
             // 
-            this.catMarcasBindingSource.DataMember = "catMarcas";
-            this.catMarcasBindingSource.DataSource = this.almacenTecnoDataSet1;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(358, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Id marca";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(323, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Categoria";
+            // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.catProveedoresBindingSource, "idProveedor", true));
+            this.cmbProveedor.DataSource = this.catProveedoresBindingSource;
+            this.cmbProveedor.DisplayMember = "nombreProveedor";
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(153, 129);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(167, 27);
+            this.cmbProveedor.TabIndex = 3;
+            this.cmbProveedor.ValueMember = "idProveedor";
+            // 
+            // catProveedoresBindingSource
+            // 
+            this.catProveedoresBindingSource.DataMember = "catProveedores";
+            this.catProveedoresBindingSource.DataSource = this.almacenTecnoDataSetBindingSource;
+            // 
+            // almacenTecnoDataSetBindingSource
+            // 
+            this.almacenTecnoDataSetBindingSource.DataSource = this.almacenTecnoDataSet;
+            this.almacenTecnoDataSetBindingSource.Position = 0;
+            // 
+            // almacenTecnoDataSet
+            // 
+            this.almacenTecnoDataSet.DataSetName = "AlmacenTecnoDataSet";
+            this.almacenTecnoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Id proveedor";
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Location = new System.Drawing.Point(150, 48);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(100, 27);
+            this.txtArticulo.TabIndex = 1;
+            this.txtArticulo.TextChanged += new System.EventHandler(this.txtArticulo_TextChanged);
+            this.txtArticulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtArticulo_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre articulo";
+            // 
+            // catProveedoresTableAdapter
+            // 
+            this.catProveedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // almacenTecnoDataSetBindingSource1
+            // 
+            this.almacenTecnoDataSetBindingSource1.DataSource = this.almacenTecnoDataSet;
+            this.almacenTecnoDataSetBindingSource1.Position = 0;
             // 
             // catMarcasTableAdapter
             // 
             this.catMarcasTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(71, 201);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(89, 35);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(195, 201);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(89, 35);
-            this.btnEditar.TabIndex = 6;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(320, 201);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(89, 35);
-            this.btnBorrar.TabIndex = 7;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // dtsetArticulos
             // 
@@ -320,6 +315,34 @@ namespace Facturacion
             this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
             this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
             // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "PC",
+            "Laptops",
+            "Celulares",
+            "Tablets",
+            "Dispositivos de lectura",
+            "Teclados",
+            "Bocinas",
+            "Lasers",
+            "Pizarras",
+            "Proyector",
+            "iPads",
+            "Cables usb",
+            "Cable vga",
+            "Cable tipo C",
+            "Mouse",
+            "Memorias",
+            "Disco duros",
+            "SSD",
+            "Pantallas"});
+            this.cmbCategoria.Location = new System.Drawing.Point(467, 48);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 27);
+            this.cmbCategoria.TabIndex = 8;
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,12 +355,12 @@ namespace Facturacion
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catMarcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsetArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catArticulosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet2)).EndInit();
@@ -358,7 +381,6 @@ namespace Facturacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource catProveedoresBindingSource;
         private Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter catProveedoresTableAdapter;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.BindingSource almacenTecnoDataSetBindingSource1;
@@ -381,5 +403,6 @@ namespace Facturacion
         private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedoresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cmbCategoria;
     }
 }

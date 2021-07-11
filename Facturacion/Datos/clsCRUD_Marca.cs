@@ -16,20 +16,6 @@ namespace Facturacion.Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-       
-
-        public DataTable MostrarMarca()
-        {
-
-            comando.Connection = conet.AbrirConexion();
-            comando.CommandText = "SELECT * FROM catMarcas";
-            comando.CommandType = CommandType.Text;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conet.CerrarConexion();
-            return tabla;
-        }
-
         //  insertar marca
         public void InsertarMarca(string nombreMarca)
         {

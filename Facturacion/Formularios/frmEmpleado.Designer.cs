@@ -32,7 +32,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtgEmpleado = new System.Windows.Forms.DataGridView();
@@ -40,6 +39,7 @@
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnBorrarEmpleado = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,8 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtApellido
             // 
@@ -66,6 +68,8 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 2;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label2
             // 
@@ -76,13 +80,6 @@
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido";
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(109, 25);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(212, 20);
-            this.txtCedula.TabIndex = 0;
             // 
             // label3
             // 
@@ -151,18 +148,27 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(109, 27);
+            this.txtCedula.Mask = "000-000000-0000A";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(100, 20);
+            this.txtCedula.TabIndex = 9;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 464);
+            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrarEmpleado);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgEmpleado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
@@ -183,7 +189,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dtgEmpleado;
@@ -191,5 +196,6 @@
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.Button btnBorrarEmpleado;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

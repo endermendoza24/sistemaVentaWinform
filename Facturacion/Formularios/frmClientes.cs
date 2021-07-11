@@ -1,4 +1,5 @@
 ﻿using Facturacion.Datos;
+using Facturacion.Formularios;
 using Facturacion.Logica;
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,7 @@ namespace Facturacion
         int posicion, id;
         clsCRUD_Clientes clien = new clsCRUD_Clientes();
         clsLogica logi = new clsLogica();
-
-        private void MostrarCliente()
-        {
-            dtgCliente.DataSource = clien.MostrarCliente();
-        }
-
-
+       
         public frmClientes()
         {
             InitializeComponent();
@@ -45,9 +40,8 @@ namespace Facturacion
                     apell = txtApellido.Text;
 
 
-                    MostrarCliente();
-
-
+                    btnEditar.Enabled = true;
+                    btnBorrarCliente.Enabled = true;
                     clien.InsertarCliente(cedu, nombre, apell);
 
                 }
@@ -61,7 +55,11 @@ namespace Facturacion
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            MostrarCliente();
+            // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet3.tblClientes' Puede moverla o quitarla según sea necesario.
+            this.tblClientesTableAdapter.Fill(this.almacenTecnoDataSet3.tblClientes);
+            btnGuardar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnBorrarCliente.Enabled = false;
 
         }
 
@@ -85,7 +83,6 @@ namespace Facturacion
 
 
                     clien.EditarCliente(id, cedu, nombre, apell);
-                    MostrarCliente();
                 }
                 catch (Exception ex)
                 {
@@ -98,13 +95,11 @@ namespace Facturacion
         private void btnBorrarCliente_Click_1(object sender, EventArgs e)
         {
             try
-            {
-                MostrarCliente();
+            {   
                 if (dtgCliente.SelectedRows.Count > 0)
                 {
                     idCliente = dtgCliente.CurrentRow.Cells["idCliente"].Value.ToString();
-                    clien.Eliminar(idCliente);
-                    MostrarCliente();
+                    clien.Eliminar(idCliente);                    
                     MessageBox.Show("Eliminado correctamente");
                     
                 }
@@ -115,6 +110,52 @@ namespace Facturacion
             {
                 MessageBox.Show("Ocurrio un error inesperado");
             }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            txtApellido.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtApellido.Text);
+            txtApellido.SelectionStart = txtApellido.Text.Length;
+
+            if (String.IsNullOrEmpty(txtCedula.Text) || String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtApellido.Text))
+            {
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+            }
+
+
         }
 
         private void dtgCliente_CellClick(object sender, DataGridViewCellEventArgs e)

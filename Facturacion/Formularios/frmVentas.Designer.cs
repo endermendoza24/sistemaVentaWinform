@@ -213,6 +213,7 @@ namespace Facturacion.Formularios
             this.txtPrecio.TabIndex = 11;
             this.txtPrecio.Text = "0.00";
             this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label6
             // 

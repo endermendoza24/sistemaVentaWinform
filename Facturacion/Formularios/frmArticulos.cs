@@ -50,7 +50,7 @@ namespace Facturacion
 
 
                     nombreArt = txtArticulo.Text;
-                    categoria = txtCategoria.Text;
+                    categoria = cmbCategoria.Text;
                     idProv = Convert.ToInt32(cmbProveedor.SelectedValue);
                     idMarca = Convert.ToInt32(cmbMarca.SelectedValue);
 
@@ -78,7 +78,7 @@ namespace Facturacion
                     int idProv, idMarca;
 
                     nombreArt = txtArticulo.Text;
-                    categoria = txtCategoria.Text;
+                    categoria = cmbCategoria.Text;
                     idProv = Convert.ToInt32(cmbProveedor.SelectedValue);
                     idMarca = Convert.ToInt32(cmbMarca.SelectedValue);
 
@@ -104,7 +104,7 @@ namespace Facturacion
             posicion = dtgArticulos.CurrentRow.Index;
             id = Convert.ToInt32(dtgArticulos[0, posicion].Value.ToString());
             txtArticulo.Text = dtgArticulos[1, posicion].Value.ToString();
-            txtCategoria.Text = dtgArticulos[2, posicion].Value.ToString();
+            cmbCategoria.Text = dtgArticulos[2, posicion].Value.ToString();
             cmbProveedor.SelectedValue = dtgArticulos[3, posicion].Value.ToString();
             cmbMarca.SelectedValue = dtgArticulos[4, posicion].Value.ToString();
         }
@@ -131,6 +131,21 @@ namespace Facturacion
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             Borrar();
+        }
+
+        private void txtArticulo_TextChanged(object sender, EventArgs e)
+        {
+            txtArticulo.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtArticulo.Text);
+            txtArticulo.SelectionStart = txtArticulo.Text.Length;
+        }
+
+        private void txtArticulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -31,30 +31,30 @@ namespace Facturacion
         {
             this.components = new System.ComponentModel.Container();
             this.grpDatos = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtCiudad = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtgProveedores = new System.Windows.Forms.DataGridView();
-            this.almacenTecnoDataSet = new Facturacion.Datos.AlmacenTecnoDataSet();
-            this.catProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catProveedoresTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
             this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenTecnoDataSet = new Facturacion.Datos.AlmacenTecnoDataSet();
+            this.catProveedoresTableAdapter = new Facturacion.Datos.AlmacenTecnoDataSetTableAdapters.catProveedoresTableAdapter();
             this.grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // grpDatos
@@ -78,79 +78,15 @@ namespace Facturacion
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos de proveedor";
             // 
-            // label1
+            // btnBorrar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Correo:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(235, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Teléfono";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(235, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ciudad";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(116, 46);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 27);
-            this.txtNombre.TabIndex = 0;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(116, 96);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 27);
-            this.txtCorreo.TabIndex = 3;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(335, 45);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 27);
-            this.txtTelefono.TabIndex = 2;
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.Location = new System.Drawing.Point(335, 97);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(100, 27);
-            this.txtCiudad.TabIndex = 4;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(98, 150);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(85, 37);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnBorrar.Location = new System.Drawing.Point(305, 150);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(85, 37);
+            this.btnBorrar.TabIndex = 7;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnEditar
             // 
@@ -162,15 +98,91 @@ namespace Facturacion
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnBorrar
+            // btnGuardar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(305, 150);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(85, 37);
-            this.btnBorrar.TabIndex = 7;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(98, 150);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(85, 37);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Location = new System.Drawing.Point(335, 97);
+            this.txtCiudad.MaxLength = 50;
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(100, 27);
+            this.txtCiudad.TabIndex = 4;
+            this.txtCiudad.TextChanged += new System.EventHandler(this.txtCiudad_TextChanged);
+            this.txtCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiudad_KeyPress);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(335, 45);
+            this.txtTelefono.MaxLength = 20;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 27);
+            this.txtTelefono.TabIndex = 2;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono_Validating);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(116, 96);
+            this.txtCorreo.MaxLength = 50;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 27);
+            this.txtCorreo.TabIndex = 3;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
+            this.txtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCorreo_Validating);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(116, 46);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 27);
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(235, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Ciudad";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(235, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Teléfono";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Correo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre:";
             // 
             // dtgProveedores
             // 
@@ -189,20 +201,6 @@ namespace Facturacion
             this.dtgProveedores.Size = new System.Drawing.Size(567, 201);
             this.dtgProveedores.TabIndex = 1;
             this.dtgProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedores_CellClick);
-            // 
-            // almacenTecnoDataSet
-            // 
-            this.almacenTecnoDataSet.DataSetName = "AlmacenTecnoDataSet";
-            this.almacenTecnoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // catProveedoresBindingSource
-            // 
-            this.catProveedoresBindingSource.DataMember = "catProveedores";
-            this.catProveedoresBindingSource.DataSource = this.almacenTecnoDataSet;
-            // 
-            // catProveedoresTableAdapter
-            // 
-            this.catProveedoresTableAdapter.ClearBeforeFill = true;
             // 
             // idProveedorDataGridViewTextBoxColumn
             // 
@@ -240,6 +238,20 @@ namespace Facturacion
             this.ciudadDataGridViewTextBoxColumn.HeaderText = "ciudad";
             this.ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
             // 
+            // catProveedoresBindingSource
+            // 
+            this.catProveedoresBindingSource.DataMember = "catProveedores";
+            this.catProveedoresBindingSource.DataSource = this.almacenTecnoDataSet;
+            // 
+            // almacenTecnoDataSet
+            // 
+            this.almacenTecnoDataSet.DataSetName = "AlmacenTecnoDataSet";
+            this.almacenTecnoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // catProveedoresTableAdapter
+            // 
+            this.catProveedoresTableAdapter.ClearBeforeFill = true;
+            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,8 +265,8 @@ namespace Facturacion
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catProveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenTecnoDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -35,12 +35,14 @@ namespace Facturacion
                     string nombreMarca;
                     nombreMarca = txtNombreMarca.Text;
                     marca.InsertarMarca(nombreMarca);
+                    btnModificar.Enabled = true;
+                    btnBorrar.Enabled = true;
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Ha ocurrido un error", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
-
+                
             }
         }
 
@@ -51,8 +53,7 @@ namespace Facturacion
                 if (dtgMarca.SelectedRows.Count > 0)
                 {
                    idMarca  = dtgMarca.CurrentRow.Cells["idMarca"].Value.ToString();
-                    marca.Eliminar(idMarca);
-                    MostrarMarca();
+                    marca.Eliminar(idMarca);                    
                     MessageBox.Show("Eliminado correctamente");
 
                 }
@@ -65,10 +66,6 @@ namespace Facturacion
             }
         }
 
-        private void MostrarMarca()
-        {
-            dtgMarca.DataSource = marca.MostrarMarca();
-        }
 
         private void dtgMarca_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,7 +81,23 @@ namespace Facturacion
 
         private void frmMarcas_Load(object sender, EventArgs e)
         {
-            MostrarMarca();
+            // TODO: esta línea de código carga datos en la tabla 'almacenTecnoDataSet1.catMarcas' Puede moverla o quitarla según sea necesario.
+            this.catMarcasTableAdapter.Fill(this.almacenTecnoDataSet1.catMarcas);
+        }
+
+        private void txtNombreMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombreMarca_TextChanged(object sender, EventArgs e)
+        {
+            txtNombreMarca.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombreMarca.Text);
+            txtNombreMarca.SelectionStart = txtNombreMarca.Text.Length;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -98,7 +111,6 @@ namespace Facturacion
                     nombreMarca = txtNombreMarca.Text;
 
                     marca.EditarMarcas(id, nombreMarca);
-                    MostrarMarca();
 
                 }
                 catch (Exception ex)

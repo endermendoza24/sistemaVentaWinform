@@ -79,12 +79,12 @@ namespace Facturacion
                 }
                 else
                     MessageBox.Show("seleccione una fila por favor");
-            }
+        }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error inesperado");
+                MessageBox.Show("Ocurrio un error inesperado, dato está enlazado.");
             }
-        }
+}
 
         
 
@@ -113,7 +113,40 @@ namespace Facturacion
             }
         }
 
-        
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            txtApellido.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtApellido.Text);
+            txtApellido.SelectionStart = txtApellido.Text.Length;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
 
         private void dtgEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {

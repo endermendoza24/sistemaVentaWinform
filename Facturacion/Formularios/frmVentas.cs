@@ -17,6 +17,7 @@ namespace Facturacion.Formularios
         //  variables globales
         decimal iva = 0, precio = 0, subtotal = 0, descuento = 0, total=0;
         int cantidad = 0;
+        bool bandera;
 
         //  instancia a otras clases
         private string idVentas = null;
@@ -170,7 +171,16 @@ namespace Facturacion.Formularios
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if(!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {               
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UnPunto(e, txtPrecio.Text);
         }
 
         private void txtCantidad_Leave(object sender, EventArgs e)
@@ -226,6 +236,66 @@ namespace Facturacion.Formularios
 
         }
 
+
+        //  validacion para que solo deje meter un punto
+        public void UnPunto(KeyPressEventArgs e, String cadena) // Esta funcion hace que solo se pueda introducir
+        {//  Números, punto y coma en los textbox, además de que solo se pueden presionar una vez...
+            int contador = 0;
+            String caracter = "";
+            for (int n = 0; n < cadena.Length; n++)
+            {
+                caracter = cadena.Substring(n, 1);
+                if (caracter == "." || caracter == ",")
+                {
+                    contador++;
+                }
+            }
+
+            if (contador == 0)
+            {
+                bandera = true;
+                if ((e.KeyChar == '.') || (e.KeyChar == ',') && bandera)
+                {
+                    bandera = false;   //ya no acepta otro punto
+                    e.Handled = false;//
+                }
+
+                else if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+
+                else
+                {
+                    e.Handled = true;//
+                }
+            }
+
+            else
+            {
+                bandera = false;
+                e.Handled = true;//
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+
+                else
+                {
+                    e.Handled = true;//
+                }
+            }
+        }
 
     }
 }

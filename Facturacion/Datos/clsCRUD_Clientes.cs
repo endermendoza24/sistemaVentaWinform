@@ -15,21 +15,7 @@ namespace Facturacion.Datos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-
-        public DataTable MostrarCliente()
-        {
-
-            comando.Connection = conet.AbrirConexion();
-            comando.CommandText = "SELECT * FROM tblClientes";
-            comando.CommandType = CommandType.Text;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conet.CerrarConexion();
-            return tabla;
-        }
-
-
-
+        
         public void EditarCliente(int idCliente, string numCedula, string primerNombre, string primerApellido)
         {
             comando.Connection = conet.AbrirConexion();
